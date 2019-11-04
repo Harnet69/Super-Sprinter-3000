@@ -6,11 +6,16 @@ app = Flask(__name__)
 
 
 @app.route('/')
+def route_index():
+    return render_template('index.html')
+
+
 @app.route('/list')
 def route_list():
     user_stories = data_handler.get_all_user_story()
 
     return render_template('list.html', user_stories=user_stories)
+
 
 if __name__ == '__main__':
     app.run(
