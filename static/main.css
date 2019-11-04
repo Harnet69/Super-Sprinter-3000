@@ -1,5 +1,5 @@
-body {
-    background: antiquewhite;
+h1 {
+    margin-bottom: 100px;
 }
 
 table {
@@ -15,4 +15,32 @@ table, th, td {
 
 th, td {
     padding: 15px;
+}
+
+th {
+    background: darkgray;
+}
+
+#story_title {
+    width: 150px;
+}
+
+#story_title {
+    width: 150px;
+}
+
+.form-group textarea {
+    width: 400px;
+}
+
+#business_value {
+    width: 100px;
+}
+
+#estimation {
+    width: 50px;
+}
+
+.form-group label {
+    font-size: 20px;
 }
