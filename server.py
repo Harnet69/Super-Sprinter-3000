@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def route_index():
-    return render_template('index.html')
+    stories_list = data_handler.get_data_from_file()
+    return render_template('index.html', stories_headers = data_handler.DATA_HEADER, user_stories = stories_list)
 
 
 @app.route('/list')
