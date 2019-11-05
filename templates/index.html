@@ -15,11 +15,15 @@
         <a href="/story">Add new User Story</a>
         <table class="table table-striped">
             <thead>
-                <caption>User stories</caption>
+                {% if user_stories %}
+                    <caption>User stories</caption>
+                {% endif %}
                 <tr>
-                    {% for header in stories_headers %}
-                        <th>{{header}}</th>
-                    {% endfor %}
+                    {% if user_stories %}
+                        {% for header in stories_headers %}
+                            <th>{{header}}</th>
+                        {% endfor %}
+                    {% endif %}
                 </tr>
             </thead>
             <tbody>
