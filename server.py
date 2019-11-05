@@ -21,7 +21,8 @@ def route_list():
 @app.route('/story', methods=['GET', 'POST'])
 def route_story():
     if request.method == 'POST':
-        user_data_input = request.form.to_dict() #convert data to dictionary
+        user_data_input = request.form # get data from form to dictionary
+
         user_store_data = []
         user_store_data.append("Id")  # TODO add appropriate function
         user_store_data.append(user_data_input["story_title"])
@@ -29,12 +30,13 @@ def route_story():
         user_store_data.append(user_data_input["acc_crit"])
         user_store_data.append(user_data_input["business_value"])
         user_store_data.append(user_data_input["estimation"])
-        user_store_data.append("status") # TODO add appropriate function
-        print(user_store_data)  # TODO delete after testing
+        user_store_data.append(user_data_input["status"])
+
         data_handler.write_data_to_file(user_store_data)
         return redirect('/')
+
     else:
-        return render_template('story.html')
+        return render_template('story.html', statuses=data_handler.STATUSES)
 
 
 if __name__ == '__main__':
