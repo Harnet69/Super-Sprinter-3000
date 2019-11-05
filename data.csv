@@ -1,3 +1,2 @@
-id,title,user_story,acceptance_criteria,business_value,estimation,status
-id,title,user_story,acceptance_criteria,business_value,estimation,status
-id,title,user_story,acceptance_criteria,business_value,estimation,status
+Id,Hello,My story,To do,1000,3,status
+Id,Friday's meeting,Collaborate with client,Got as much money as we can,1000,3,status

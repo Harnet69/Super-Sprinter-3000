@@ -18,14 +18,14 @@ def get_data_from_file():
         print(e)
 
 
-def write_data_to_file(DATA_FILE_PATH, user_data, write_one_row='True'):
+def write_data_to_file(user_data, write_one_row='True'):
     try:
         if write_one_row:
-            with open(file_name, 'a') as f:
+            with open(DATA_FILE_PATH, 'a') as f:
                 schedule_writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                 schedule_writer.writerow(user_data)
         else:
-            with open(file_name, 'w') as f:
+            with open(DATA_FILE_PATH, 'w') as f:
                 schedule_writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                 schedule_writer.writerows(user_data)
     except FileNotFoundError as e:
