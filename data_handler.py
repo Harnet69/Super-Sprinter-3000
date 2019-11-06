@@ -30,7 +30,3 @@ def write_data_to_file(user_data, write_one_row='True'):
                 schedule_writer.writerows(user_data)
     except FileNotFoundError as e:
         print(e)
-
-
-def get_all_user_story():
-    get_data_from_file()
