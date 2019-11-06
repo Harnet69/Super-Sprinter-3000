@@ -47,10 +47,8 @@ def route_story():
 def route_edit_story(post_id):
     stories_list = data_handler.get_data_from_file()  # list of user stories
     story_to_edit = [x for x in stories_list if str(x[0]) == str(post_id)]  # find the story by id
-    print(story_to_edit)
-    # get stories from file, find one by id and send a list with values to template for displaying as values for change
     if story_to_edit:
-        return render_template('story.html', statuses=data_handler.STATUSES)
+        return render_template('story.html', statuses=data_handler.STATUSES, story_to_edit=story_to_edit[0])
     else:
         error_message = f"Store with id = {post_id} doesn't exist!"
         return render_template('error_page.html', error_message=error_message)

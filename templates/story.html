@@ -16,33 +16,37 @@
     <form action="/story" method="POST">
       <div class="form-group">
         <label for="story_title">Story Title:</label>
-        <input required pattern=".{5,}" required title="5 characters minimum" type="text" class="form-control" id="story_title" value="" name="story_title">
+        <input required pattern=".{5,}" required title="5 characters minimum" type="text" class="form-control" id="story_title" value="{{ story_to_edit[1] if story_to_edit else ''}}" name="story_title">
       </div>
       <div class="form-group">
         <label for="user_story">User Story:</label>
-          <textarea required class="form-control" id="user_story" value="" name="user_story"></textarea>
+          <textarea required class="form-control" id="user_story" placeholder="{{ story_to_edit[2] if story_to_edit else ''}}" name="user_story"></textarea>
       </div>
       <div class="form-group">
           <label for="acc_crit">Acceptance Criteria:</label>
-          <textarea required class="form-control" id="acc_crit" value="" name="acc_crit"></textarea>
+          <textarea required class="form-control" id="acc_crit" placeholder="{{ story_to_edit[3] if story_to_edit else ''}}" name="acc_crit"></textarea>
       </div>
       <div class="form-group">
         <label for="business_value">Business value:</label>
-        <input type="number" min="100" max="1500" step="100" class="form-control" id="business_value" value="" name="business_value">
+        <input type="number" min="100" max="1500" step="100" class="form-control" id="business_value" value="{{ story_to_edit[4] if story_to_edit else ''}}" name="business_value">
       </div>
       <div class="form-group">
         <label for="estimation">Estimation:</label>
-        <input type="number" min="0.5" max="40" step="0.5" class="form-control" id="estimation" value="" name="estimation">
+        <input type="number" min="0.5" max="40" step="0.5" class="form-control" id="estimation" value="{{ story_to_edit[5] if story_to_edit else ''}}" name="estimation">
       </div>
       <div class="form-group">
         <label for="status">Status:</label>
         <select name="status">
             {% for status in statuses %}
-                <option value="{{ status }}" id="status" name="status">{{ status }}</option>
+                {% if story_to_edit and story_to_edit[6]==status %}
+                    <option value="{{ status }}" selected id="status_selected" name="status">{{ status }}</option>
+                {% else %}
+                    <option value="{{ status }}" id="status" name="status">{{ status }}</option>
+                {% endif %}
             {% endfor %}
         </select>
       </div>
-      <button type="submit" class="btn btn-primary">Add new User Story</button>
+      <button type="submit" class="btn btn-primary">{{ 'Update User Story' if story_to_edit else 'Add new User Story' }}</button>
     </form>
     </body>
 </html>
