@@ -13,18 +13,19 @@
     </head>
     <body>
     <h1>Add User Story</h1>
-    <form action="/story" method="POST">
+    <form action="{{ story_to_edit[0] if story_to_edit else '/story' }}" method="POST">
+        <input type="hidden" value="{{ story_to_edit[0] if story_to_edit else ''}}" name="story_id">
       <div class="form-group">
         <label for="story_title">Story Title:</label>
         <input required pattern=".{5,}" required title="5 characters minimum" type="text" class="form-control" id="story_title" value="{{ story_to_edit[1] if story_to_edit else ''}}" name="story_title">
       </div>
       <div class="form-group">
         <label for="user_story">User Story:</label>
-          <textarea required class="form-control" id="user_story" placeholder="{{ story_to_edit[2] if story_to_edit else ''}}" name="user_story"></textarea>
+          <textarea required class="form-control" id="user_story" name="user_story">{{ story_to_edit[2] if story_to_edit else ''}}</textarea>
       </div>
       <div class="form-group">
           <label for="acc_crit">Acceptance Criteria:</label>
-          <textarea required class="form-control" id="acc_crit" placeholder="{{ story_to_edit[3] if story_to_edit else ''}}" name="acc_crit"></textarea>
+          <textarea required class="form-control" id="acc_crit" name="acc_crit">{{ story_to_edit[3] if story_to_edit else ''}}</textarea>
       </div>
       <div class="form-group">
         <label for="business_value">Business value:</label>
