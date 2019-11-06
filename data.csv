@@ -1,2 +1,3 @@
-Id,select an Auction product,Select an Auction product in the Acquisition ordering platform so that I can bid on it,Log in to Acquisition Gateway,1000,1,planning
-Id,Review my previous bids,to review my previous bids in the Acquisition ordering platform so that I can remove expired bids.,"select one, or multiple, expired bids",1000,5,todo
+0,select an Auction product,Select an Auction product in the Acquisition ordering platform so that I can bid on it,Log in to Acquisition Gateway,1000,1,planning
+1,Review my previous bids,to review my previous bids in the Acquisition ordering platform so that I can remove expired bids.,"select one, or multiple, expired bids",1000,5,todo
+2,Create product content,"As a Content Owner, I want to be able to create product content so that I can provide information and market to customers","Create, edit / update an existing page of content",500,40,review
