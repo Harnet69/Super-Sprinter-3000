@@ -1,15 +1,15 @@
-#header{
+#header {
     background: white;
     margin-bottom: -30px;
 }
-#header a img{
+
+#header a img {
     margin-top: -50px;
     margin-left: -20px;
-  }
+}
 
 table {
     border-spacing: 5px;
-    width: 100%;
 }
 
 table, th, td {
@@ -17,6 +17,7 @@ table, th, td {
     border-collapse: collapse;
     text-align: center;
 }
+
 
 th, td {
     padding: 15px;
@@ -44,4 +45,14 @@ th {
 
 .form-group label {
     font-size: 20px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: darkgray;
+  color: white;
+  text-align: center;
 }
