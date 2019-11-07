@@ -25,7 +25,7 @@ def route_story():
             except ValueError:
                 print("It's not a number")
         else:
-            new_story_id = 0  #  if it's the first story
+            new_story_id = 0  # if it's the first story
 
         user_store_data = []
         user_store_data.append(new_story_id)
@@ -59,16 +59,19 @@ def route_edit_story(post_id):
         updated_story.append(user_data_input["business_value"])
         updated_story.append(user_data_input["estimation"])
         updated_story.append(user_data_input["status"])
-
-        updated_stories = [] # updated by user stories
+        updated_stories = []  # updated by user stories
         for story in stories_list:
             if story[0] == updated_story[0]:  # if it's the updated story
+                if user_data_input['action'] == "Delete":  # if user pressed a delete button
+                    continue
                 updated_stories.append(updated_story)
             else:
                 updated_stories.append(story)
 
         data_handler.write_data_to_file(updated_stories, False)  # rewrite stories file by ONE TRANSACTION
         return redirect(url_for('route_index'))
+
+
 
     if story_to_edit:  # check if typed by user in a browser line story id exists
         return render_template('story.html', statuses=data_handler.STATUSES, story_to_edit=story_to_edit[0])
