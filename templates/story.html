@@ -40,5 +40,8 @@
         </select>
       </div>
       <button type="submit" class="btn btn-primary">{{ 'Update User Story' if story_to_edit else 'Add new User Story' }}</button>
+        {% if story_to_edit %}
+            <button type="submit" type="button" class="btn btn-danger" name="delete">Delete</button>
+        {% endif %}
     </form>
 {% endblock %}
