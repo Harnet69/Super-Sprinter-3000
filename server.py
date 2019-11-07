@@ -26,6 +26,7 @@ def route_story():
                 print("It's not a number")
         else:
             new_story_id = 0  #  if it's the first story
+
         user_store_data = []
         user_store_data.append(new_story_id)
         user_store_data.append(user_data_input["story_title"])
@@ -36,7 +37,7 @@ def route_story():
         user_store_data.append(user_data_input["status"])
 
         data_handler.write_data_to_file(user_store_data)  # write the story to a file
-        return redirect('/')
+        return redirect(url_for('route_index'))
 
     else:
         return render_template('story.html', statuses=data_handler.STATUSES)  # if a request method if GET
@@ -67,7 +68,7 @@ def route_edit_story(post_id):
                 updated_stories.append(story)
 
         data_handler.write_data_to_file(updated_stories, False)  # rewrite stories file by ONE TRANSACTION
-        return redirect('/')
+        return redirect(url_for('route_index'))
 
     if story_to_edit:  # check if typed by user in a browser line story id exists
         return render_template('story.html', statuses=data_handler.STATUSES, story_to_edit=story_to_edit[0])

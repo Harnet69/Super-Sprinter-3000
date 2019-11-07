@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Add User Story</title>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="/static/main.css">
-    </head>
-    <body>
+{% extends 'base.html' %}
+
+{% block title %}Add User Story{% endblock %}
+
+{% block content %}
+
     <h1>Add User Story</h1>
     <form action="{{ story_to_edit[0] if story_to_edit else '/story' }}" method="POST">
         <input type="hidden" value="{{ story_to_edit[0] if story_to_edit else ''}}" name="story_id">
@@ -49,5 +41,4 @@
       </div>
       <button type="submit" class="btn btn-primary">{{ 'Update User Story' if story_to_edit else 'Add new User Story' }}</button>
     </form>
-    </body>
-</html>
+{% endblock %}

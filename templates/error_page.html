@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Error page</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Error page{% endblock %}
+
+{% block content %}
     <h1>{{error_message}}</h1>
-<p>Try to give another Id, or go to the <a href="/">stories page</a> </p>
-</body>
-</html>
+    <p>
+        Try to give another Id, or go to the <a href="/">stories page</a>
+    </p>
+
+{% endblock %}

@@ -1,6 +1,11 @@
-h1 {
-    margin-bottom: 100px;
+#header{
+    background: white;
+    margin-bottom: -30px;
 }
+#header a img{
+    margin-top: -50px;
+    margin-left: -20px;
+  }
 
 table {
     border-spacing: 5px;

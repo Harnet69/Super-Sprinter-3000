@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Super Sprinter 3000</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="/static/main.css">
+{% extends 'base.html' %}
 
-    </head>
-    <body>
-        <a href="/"><h1>SUPER SPRINTER 3000</h1></a>
+{% block title %}Error page{% endblock %}
+
+{% block content %}
         <a href="/story">Add new User Story</a>
         <table class="table table-striped">
             <thead>
-                <caption>User stories</caption>
                 <tr>
                     {% for header in stories_headers %}
                         <th>{{header}}</th>
@@ -37,8 +27,4 @@
                 {% endfor %}
             </tbody>
         </table>
-        <ul>
-
-        </ul>
-    </body>
-</html>
+{% endblock %}
