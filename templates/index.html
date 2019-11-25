@@ -15,8 +15,10 @@
             <tbody>
                 {% for story in user_stories %}
                     <tr>
+                        <!-- get id of the story for update -->
                         {% set link_to_edit = story[0] %}
                     {% for item in story %}
+                        <!-- add a link to stories title-->
                         {% if loop.index == 2 %}
                         <td><a href="/story/{{link_to_edit}}">{{item}}</a></td>
                         {% else %}

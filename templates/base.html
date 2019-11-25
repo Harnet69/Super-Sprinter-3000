@@ -3,13 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
-        <link rel="shortcut icon" href="/static/sprinter_fav.png" type="image/x-icon">
-        <link rel="icon" href="/static/sprinter_fav.png" type="image/x-icon">
+        <link rel="shortcut icon" href="{{url_for('static', filename='sprinter_fav.png')}}" type="image/x-icon">
+        <link rel="icon" href="{{url_for('static', filename='sprinter_fav.png')}}" type="image/x-icon">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="/static/main.css">
+        <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
 
     </head>
     <header>
@@ -25,9 +25,7 @@
         </div>
     </header>
     <body>
-        {% block content %}
-
-        {% endblock %}
+        {% block content %}{% endblock %}
     </body>
     <footer>2019 made by Harnet</footer>
 </html>
